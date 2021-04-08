@@ -4,8 +4,6 @@ A cli to create local templates and copy templates from github which is saved wi
 
 > This project is currently under development. Incase if you want to help create a pr or an issue. ~~The code might look unorganized~~.
 
-![Example](/assets/example.gif)
-
 ## Quick guide
 
 ### Version
