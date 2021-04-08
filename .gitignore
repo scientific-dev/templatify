@@ -1,0 +1,7 @@
+# Test files
+example/test-template
+test.sh
+
+# Build files
+templatify.exe
+templates/

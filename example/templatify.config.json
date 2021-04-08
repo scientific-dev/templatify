@@ -1,0 +1,10 @@
+{
+    "name": "example",
+    "description": "My test template lol :)",
+    "parseFiles": "*",
+    "delimiter": "$",
+    "ignore": ["test", "test-template"],
+    "preScripts": [
+        "node test-template"
+    ]
+}

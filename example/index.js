@@ -1,0 +1,1 @@
+console.log("Hello world.\nValue for foo: ${foo}\nValue for bar: ${bar}")
