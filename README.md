@@ -78,7 +78,7 @@ INFO Performing termplate configuration.
 SUCCESS Saved "repo" as a template.
 ```
 
-So here repo should be something like `username/reponame`. But any github repo cannot be a templatify template it must have a `templatify.config.json` file in the root of it! Currently there is no support to import from branches. While downloading the repo as a template it might ask you to allow template configuration, this will remove ignore files. And also it would have the `.git` folder with it but if you want to prevent it while using the template you can use the `--no-git` flag while using it. 
+So here repo should be something like `username/reponame`. But any github repo cannot be a templatify template it must have a `templatify.config.json` file in the root of it. You can view how to convert your github repository to a templatify template [here](https://github.com/Scientific-Guy/templatify/wiki/Github-repository-to-a-template)   Currently there is no support to import from branches. While downloading the repo as a template it might ask you to allow template configuration, this will remove ignore files. And also it would have the `.git` folder with it but if you want to prevent it while using the template you can use the `--no-git` flag while using it. 
 
 > Using the `name` field in the config file in the repo is useless because when storing the template it would be `username/reponame`. You can still keep the name field.
 
