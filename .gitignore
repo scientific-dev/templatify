@@ -5,6 +5,7 @@ test.sh
 # Build files
 templatify.exe
 templates/
+build/
 
 # Outdated asset files
 assets/example.gif
