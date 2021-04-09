@@ -1,6 +1,10 @@
 # Templatify
 
-A cli to create local templates and copy templates from github which is saved within your pc and used easily!
+[![](https://www.codefactor.io/repository/github/scientific-guy/templatify/badge?style=for-the-badge)](https://www.codefactor.io/repository/github/scientific-guy/templatify)
+[![](https://img.shields.io/badge/INSTALL-TEMPLATIFY-white?style=for-the-badge)](https://github.com/Scientific-Guy/templatify/wiki/Installation)
+[![](https://img.shields.io/github/v/tag/Scientific-Guy/templatify?style=for-the-badge&label=version)](https://github.com/Scientific-Guy/templatify)
+
+A cli to create local templates and copy templates from github which is saved within your pc and used easily! You can view the installation guide for templatify [here](https://github.com/Scientific-Guy/templatify/wiki/Installation).
 
 > This project is currently under development. Incase if you want to help create a pr or an issue. ~~The code might look unorganized~~.
 
