@@ -1,6 +1,6 @@
 # Create an issue if the installtion script does not works
 
-current_version="v1.0.0-beta"
+current_version="v1.0.0"
 root_path="$HOME/templatify"
 install_path="$root_path/templatify"
 github_download_url="https://github.com/Scientific-Guy/templatify/releases/download"
