@@ -1,16 +1,15 @@
 # Create an issue for any kind of build issues.
 
 platforms=("windows/amd64" "windows/386" "darwin/amd64" "linux/386" "linux/amd64" "linux/arm64")
-suffix=("win64" "win32" "macOS64" "linux32" "linux64" "linux-arm64")
 index=0
 
 for platform in "${platforms[@]}"
 do 
 
-    output_name="templatify-${suffix[$index]}"
     platform_split=(${platform//\// })
     GOOS=${platform_split[0]}
     GOARCH=${platform_split[1]}
+    output_name="templatify-${GOOS}-${GOARCH}"
 
     if [ $GOOS == "windows" ]; then 
         output_name="$output_name.exe"

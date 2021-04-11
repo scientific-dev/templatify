@@ -12,12 +12,14 @@ fi
 echo "Installing templatify version: $current_version"
 echo "Installing at $install_path"
 
-case "$OSTYPE" in 
-    darwin*) os="macOS";;
-    linux*)  os="linux";; 
-    msys*)   os="win";;
-    win32*)  os="win";;
-    *) echo "Unknown os for installtion. Please create an issue on github to make templatify available for $OSTYPE!" && exit 1 ;;
+platform="$(uname -s | tr '[:upper:]' '[:lower:]')"
+case $platform in 
+    darwin*)    os="macOS";;
+    linux*)     os="linux";; 
+    msys_nt*)   os="win";;
+    mingw*)     os="win";;
+    cygwin_nt*) os="win";;
+    *) echo "Unknown os for installtion. Please create an issue on github to make templatify available for $platform!" && exit 1 ;;
 esac
 
 case "`uname -m`" in

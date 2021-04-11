@@ -21,12 +21,13 @@ type Command struct {
 }
 
 type Config struct {
-	Name        string   `json:"name"`
-	Description string   `json:"description"`
-	PreScripts  []string `json:"preScripts"`
-	Ignore      []string `json:"ignore"`
-	Delimiter   string   `json:"delimiter"`
-	ParseFiles  string   `json:"parseFiles"`
+	Name        string            `json:"name"`
+	Description string            `json:"description"`
+	PreScripts  []string          `json:"preScripts"`
+	Scripts     map[string]string `json:"scripts"`
+	Ignore      []string          `json:"ignore"`
+	Delimiter   string            `json:"delimiter"`
+	ParseFiles  string            `json:"parseFiles"`
 }
 
 func (self Config) ProcessIgnoreMatches() {
@@ -152,7 +153,7 @@ func UnknownCommand(cmd string) {
 	_, isVersionFlag := flags["version"]
 
 	if isVersionFlag {
-		command.Println("[1mCurrent templatify version:[0m 1.0.0")
+		command.Println("[1mCurrent templatify version:[0m 1.1.0")
 		return
 	} else {
 		command.LogError("Unknown command: \"" + cmd + "\"")

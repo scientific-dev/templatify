@@ -1,5 +1,16 @@
 # Changelog
 
+## v1.1.0
+
+New enhanced features with security fix feature and install bug fix.
+
+- **security**: Added `--disable-pre-scripts` flag to prevent spam purpose if you identify suspectful scripts in the config file of the template which is imported from a github template.
+- **feature**: Added `scripts` field with `exec` and `test` command.
+- **feature**: From `v1.1` the gh releases executables are formatted as `templatify-(os)-(arch)` for easy insatllation with installation script.
+- **bug-fix**: Fix install script
+
+**Released:** 11/4/2021
+
 ## v1.0.0
 
 Fully first stable release of templatify.

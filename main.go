@@ -19,6 +19,8 @@ var (
 		"pre-scripts": RunPreScripts,
 		"get":         Download,
 		"init":        MakeInit,
+		"exec":        ExecScript,
+		"test":        Test,
 	}
 )
 

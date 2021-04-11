@@ -46,7 +46,10 @@ You can also use configuration file like `templatify.config.json`! An example of
         "node_modules",
         "package-lock.json",
         "test/*.js"
-    ]
+    ],
+    "scripts": {
+        "test": "echo Test script executed"
+    }
 }
 ```
 
@@ -58,6 +61,7 @@ There are more configuration can be done with that! Here is are list of fields. 
 - **ignore** - Array of files to ignore when saving as a template.
 - **delimiter** - The delimiter for parsing files, by default it will be as `%` which will be used as `%{key}`. If you set it as `$` then it would be `${key}` to be parsed.
 - **parseFiles** - A glob string for the files to be parsed. This will be required to enable parsing else it would not. Remember if the template consists of any binary files, it might throw error while parsing files so use a perfect glob string for it.
+- **scripts** - Scripts to work with the template.
 
 > You can directly use `templatify init` to create a default config file!
 
@@ -126,6 +130,35 @@ SUCCESS Finished in 0s
 
 When saving any template with the `.git` directory with it might confuse with the current git in the path to use the template in that case you can use the `--no-git` flag. This might be useful to use a template from github and not use the git.
 
+If you think pre scripts of a project is suspicious (imported from github or anywhere). You can run the `use` command with the `--disable-pre-scripts` flag.
+
+### Using scripts
+
+With templatify v1.1, you can use templatify scripts by adding the `scripts` field inspired from npm's `package.json`. For example if your config file has the following:
+
+```json
+{
+    "scripts": {
+        "test": "echo Test script executed.",
+        "build": "some build script"
+    }
+}
+```
+
+The following script below 
+
+```sh
+> templatify exec build
+# Some build script execution
+```
+
+And there is an alias to execute the test script
+
+```sh
+> templatify test
+Test script executed.
+```
+
 ### Get all templates
 
 You can view what and all templates you have stored by
@@ -187,3 +220,7 @@ You can also remove all templates
 CONFIRM Are you sure? (y/n) y
 SUCCESS Deleted all templates successfully.
 ```
+
+## Contributors
+
+- [@abh80](https://github.com/abh80) *For testing and reporting bugs*

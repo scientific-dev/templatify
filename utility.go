@@ -12,6 +12,7 @@ func RunPreScripts() {
 	config := command.ProcessConfig()
 
 	for _, preScript := range config.PreScripts {
+		command.Println("[90mPRE-SCRIPT[0m " + preScript)
 		executeCommand(strings.Split(preScript, " "))
 	}
 
@@ -30,6 +31,21 @@ func MakeInit() {
 	if err := ioutil.WriteFile(pathname, []byte(str), 0644); err != nil {
 		command.LogError("Failed creating the config file: " + err.Error())
 	}
+}
+
+func ExecScript() {
+	if len(command.Args) == 0 {
+		command.LogError("No script name has been provided.")
+	}
+
+	if script, found := command.ProcessConfig().Scripts[command.Args[0]]; found {
+		executeCommand(strings.Split(script, " "))
+	}
+}
+
+func Test() {
+	command.Args = []string{"test"}
+	ExecScript()
 }
 
 func GetGHBaseUrl(url string) string {

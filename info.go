@@ -9,6 +9,7 @@ import (
 var listSpaces int = -3
 
 func Info() {
+
 	if len(command.Args) < 1 {
 		command.LogError("No template name has been provided!")
 	}
@@ -35,6 +36,23 @@ func Info() {
 	command.Println("[90m-[0m [1mDescription:[0m      " + description)
 	command.Println("[90m-[0m [1mPre-Scripts:[0m      " + preScripts)
 	command.Println("[90m-[0m [1mIgnored files:[0m    " + ignore)
+
+	maxLength := 0
+
+	for name := range template.Scripts {
+		l := len(name)
+		if maxLength < l {
+			maxLength = l
+		}
+	}
+
+	if maxLength > 0 {
+		command.Println("[90m-[0m [1mScripts:[0m")
+		for name, script := range template.Scripts {
+			command.Println("    [90m-[0m [1m" + name + ":[0m" + strings.Repeat(" ", (maxLength-len(name))+3) + script)
+		}
+	}
+
 }
 
 func All() {
@@ -101,10 +119,13 @@ func Help() {
 		"       [90m--custom-path=<path>[0m    Set a custom path to use the template else will use the path as current working directory",
 		"       [90m--no-git[0m                Will not clone .git folder",
 		"       [90m--remove-lock[0m           Will remove templatify's lock file",
+		"       [90m--disable-pre-scripts[0m   Will not run pre scripts",
 		"get [90m<repo>[0m     Download a repo as a template",
 		"info [90m<name>[0m    Shows info of a template",
 		"list [90m<name>[0m    Returns the folder map of the template",
 		"remove [90m<name>[0m  Delete a template",
+		"exec [90m<name>[0m    Execute a script by its name",
+		"test           Executes the test script if it exists",
 		"\nYou can read the guide in github [94;4mhttps://github.com/scientific-guy/templatify[0m.",
 	}
 

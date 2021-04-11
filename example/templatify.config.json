@@ -5,6 +5,9 @@
     "delimiter": "$",
     "ignore": ["test", "test-template"],
     "preScripts": [
-        "node test-template"
-    ]
+        "node ."
+    ],
+    "scripts": {
+        "test": "echo Test script executed."
+    }
 }

@@ -6,11 +6,11 @@ import (
 )
 
 func Remove() {
-	if command.Confirm("[90mCONFIRM[0m Are you sure? (y/n) ") {
-		if len(command.Args) < 1 {
-			command.LogError("No template name has been provided!")
-		}
+	if len(command.Args) < 1 {
+		command.LogError("No template name has been provided!")
+	}
 
+	if command.Confirm("[90mCONFIRM[0m Are you sure? (y/n) ") {
 		if removeErr := os.RemoveAll(path.Join(command.Dirname(), "templates", command.Args[0])); removeErr != nil {
 			if os.IsPermission(removeErr) {
 				command.LogError("Access denied to remove directories. Run the program as administrator. " + removeErr.Error())

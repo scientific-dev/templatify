@@ -62,11 +62,15 @@ func Use() {
 
 	command.Println("[36mINFO[0m Cloned files.")
 
-	for _, preScript := range lockData.PreScripts {
-		executeCommand(strings.Split(preScript, " "))
+	if _, disablePreScripts := flags["disable-pre-scripts"]; !disablePreScripts {
+		for _, preScript := range lockData.PreScripts {
+			command.Println("[90mPRE-SCRIPT[0m " + preScript)
+			executeCommand(strings.Split(preScript, " "))
+		}
+
+		command.Println("[36mINFO[0m Ran all preScripts.")
 	}
 
-	command.Println("[36mINFO[0m Ran all preScripts.")
 	timeEnd := time.Now().UnixNano() / 1000000
 	command.Println("[32mSUCCESS[0m Finished in " + strconv.Itoa(int(timeEnd-timeStart)/1000) + "s")
 }
@@ -107,7 +111,6 @@ func executeCommand(args []string) {
 	process.Stdin = os.Stdin
 	process.Stdout = os.Stdout
 	process.Stderr = os.Stderr
-	command.Println("[90mPRE-SCRIPT[0m " + strings.Join(args, " "))
 
 	if err := process.Run(); err != nil {
 		command.LogError("Failed running a preScript \"" + strings.Join(args, " ") + "\": " + err.Error())

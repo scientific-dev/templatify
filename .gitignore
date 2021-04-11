@@ -1,6 +1,7 @@
 # Test files
 example/test-template
 test.sh
+command.exe
 
 # Build files
 templatify.exe

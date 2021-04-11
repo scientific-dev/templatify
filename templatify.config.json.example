@@ -10,5 +10,8 @@
         "node_modules",
         "package-lock.json",
         "test/*.js"
-    ]
+    ],
+    "scripts": {
+        "test": "echo Test script executed"
+    }
 }
