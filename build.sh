@@ -11,9 +11,10 @@ do
     GOOS=$os_name
     GOARCH=${platform_split[1]}
 
-    if [ $os_name == "darwin" ]; then
-        os_name="macOS"
-    fi
+    case $os_name in 
+        darwin) os_name="macOS";;
+        windows) os_name="win";;
+    esac
 
     output_name="templatify-$os_name-$GOARCH"
 

@@ -11,6 +11,17 @@ New enhanced features with security fix feature and install bug fix.
 
 **Released:** 11/4/2021
 
+| Name                                    | Description                                                                        |
+|-----------------------------------------|------------------------------------------------------------------------------------|
+| [templatify-linux-arm64](https://github.com/Scientific-Guy/templatify/releases/download/v1.1.0/templatify-linux-arm64) | Templatify for linux with arch arm64 |
+| [templatify-linux32](https://github.com/Scientific-Guy/templatify/releases/download/v1.1.0/templatify-linux-386) | Templatify for linux 32 bit |
+| [templatify-linux64](https://github.com/Scientific-Guy/templatify/releases/download/v1.1.0/templatify-linux-amd64) | Templatify for linux 64 bit |
+| [templatify-macOS64](https://github.com/Scientific-Guy/templatify/releases/download/v1.1.0/templatify-macOS-amd64) | Templatify for darwin 64 bit |
+| [templatify-win32.exe](https://github.com/Scientific-Guy/templatify/releases/download/v1.1.0/templatify-win-386.exe) | Templatify for windows 32 bit |
+| [templatify-win32.rar](https://github.com/Scientific-Guy/templatify/releases/download/v1.1.0/templatify-win-386.rar) | Templatify for windows 32 bit in rar |
+| [templatify-win64.exe](https://github.com/Scientific-Guy/templatify/releases/download/v1.1.0/templatify-win-amd64.exe) | Templatify for windows 64 bit |
+| [templatify-win64.rar](https://github.com/Scientific-Guy/templatify/releases/download/v1.1.0/templatify-win-amd64.rar) | Templatify for windows 64 bit in rar |
+
 ## v1.0.0
 
 Fully first stable release of templatify.
