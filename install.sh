@@ -1,6 +1,6 @@
 # Create an issue if the installtion script does not works
 
-current_version="v1.0.0"
+current_version="v1.1.0"
 root_path="$HOME/templatify"
 install_path="$root_path/templatify"
 github_download_url="https://github.com/Scientific-Guy/templatify/releases/download"
@@ -23,15 +23,15 @@ case $platform in
 esac
 
 case "`uname -m`" in
-    x86)    arch="64";;
-    ia64)   arch="64";;
-    i?86)   arch="64";;
-    amd64)  arch="64";;
-    x86_64) arch="64";;
+    x86)    arch="amd64";;
+    ia64)   arch="amd64";;
+    i?86)   arch="amd64";;
+    amd64)  arch="amd64";;
+    x86_64) arch="amd64";;
     *) echo "You architecture is not supported. Please create an issue on github to make templatify available for this arch! If you think this is a mistake you can directly download it from github releases!" && exit 1;;
 esac
 
-target="$github_download_url/$current_version/templatify-$os$arch"
+target="$github_download_url/$current_version/templatify-$os-$arch"
 
 if [ $os == "win" ]; then 
     target="$target.exe"

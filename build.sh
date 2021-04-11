@@ -7,9 +7,15 @@ for platform in "${platforms[@]}"
 do 
 
     platform_split=(${platform//\// })
-    GOOS=${platform_split[0]}
+    os_name=${platform_split[0]}
+    GOOS=$os_name
     GOARCH=${platform_split[1]}
-    output_name="templatify-${GOOS}-${GOARCH}"
+
+    if [ $os_name == "darwin" ]; then
+        os_name="macOS"
+    fi
+
+    output_name="templatify-$os_name-$GOARCH"
 
     if [ $GOOS == "windows" ]; then 
         output_name="$output_name.exe"

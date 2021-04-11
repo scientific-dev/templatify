@@ -16,7 +16,7 @@ You can view up the version by
 
 ```sh
 > templatify --version
-Current templatify version: 1.0.0
+Current templatify version: 1.1.0
 ```
 
 ### Saving templates
