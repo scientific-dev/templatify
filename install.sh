@@ -3,7 +3,7 @@
 current_version="v1.1.0"
 root_path="$HOME/templatify"
 install_path="$root_path/templatify"
-github_download_url="https://github.com/Scientific-Guy/templatify/releases/download"
+github_download_url="https://github.com/scientific-dev/templatify/releases/download"
 
 if [ ${#1} != 0 ]; then
     current_version=$1
